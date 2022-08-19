@@ -1,0 +1,15 @@
+test1:frame.o test.o ui.o client.o Socket.o
+	g++ frame.o test.o ui.o client.o Socket.o -o test -Wall -lpthread
+frame.o:frame.cc
+	g++ -c frame.cc -Wall
+test.o:test.cc
+	g++ -c test.cc -Wall
+ui.o:
+	g++ -c ui.cc -Wall
+client.o:client.cc
+	g++ -c client.cc -Wall
+Socket.o:../include/Socket.cc
+	g++ -c ../include/Socket.cc 
+
+clean:
+	rm *.o test
